@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Service
-public class TranferenciaService {
+public class TransferenciaService {
    @Autowired
    private TransferenciaRepository transferenciaRepository;
 	

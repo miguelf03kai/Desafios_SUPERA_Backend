@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.banco.domain.model.Transferencia;
-import br.com.banco.domain.service.TranferenciaService;
+import br.com.banco.domain.service.TransferenciaService;
 import br.com.banco.utils.Conversao;
 import lombok.AllArgsConstructor;
 
@@ -28,7 +28,7 @@ import lombok.AllArgsConstructor;
 public class TransferenciaController {
 
 	@Autowired
-	private TranferenciaService transferenciaService;
+	private TransferenciaService transferenciaService;
 	
 	@GetMapping("/periodo")
     public ResponseEntity<Map<String, Object>> buscarPeriodoOperador(
