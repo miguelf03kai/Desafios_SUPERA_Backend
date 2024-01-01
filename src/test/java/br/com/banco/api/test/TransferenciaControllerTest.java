@@ -1,6 +1,6 @@
 package br.com.banco.api.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Collections;
 
@@ -71,8 +71,23 @@ public class TransferenciaControllerTest {
     }
     
     @Test
+    public void testGetTransferenciasParametroContaIdApenas() {
+        String url = baseURL+"?contaId=1";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+
+        HttpEntity<?> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+    }
+    
+    @Test
     public void testGetTransferenciasTodosParametros() {
-        String url = baseURL+"?dataInicio=2019-01-01&dataFim=2020-01-01&operador=Fulano&page=0&size=4";
+        String url = baseURL+"?contaId=1&dataInicio=2019-01-01&dataFim=2020-01-01&operador=Fulano&page=0&size=4";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));

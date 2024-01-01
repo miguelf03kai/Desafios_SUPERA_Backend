@@ -20,4 +20,20 @@ public class Conversao {
 			 
 			return result;
 	  }
+	  
+	  public static Long converteContaId(String contaId) {
+		 	Long result;
+		 	
+			try {
+				if (contaId != null && !contaId.isEmpty()) {
+			        result = Long.parseLong(contaId);
+			        return result;
+				}
+				else 
+					return null;
+			} catch (Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+	  }
 }
