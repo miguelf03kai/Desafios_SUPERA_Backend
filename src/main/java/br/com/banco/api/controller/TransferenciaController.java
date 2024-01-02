@@ -50,7 +50,7 @@ public class TransferenciaController {
         Map<String, Object> response = new HashMap<>();
         response.put("transferencias", transferencias.getContent());
         response.put("saldoPeriodo", transferenciaService
-        							  .buscarPeriodoOperadorSaldoPeriodo(inicio, fim, operador, conta, pageable));
+        							  .buscarPeriodoOperadorSaldoPeriodo(inicio, fim, operador, conta, null));
         response.put("saldoTotal", transferenciaService
         						     .buscarOperadorSaldoTotal(operador, conta));
 
